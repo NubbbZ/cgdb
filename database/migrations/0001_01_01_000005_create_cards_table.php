@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('slug');
             $table->string('image')->nullable();
             $table->integer('reference')->nullable();
-            $table->string('illustrator')->nullable();
             $table->json('attributes')->nullable();
             $table->foreignId('set_id')->constrained();
         });

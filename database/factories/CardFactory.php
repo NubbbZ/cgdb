@@ -23,7 +23,6 @@ class CardFactory extends Factory
             'slug' => Str::slug($name),
             'image' => fake()->imageUrl(),
             'reference' => fake()->numberBetween(1, 128),
-            'illustrator' => fake()->name(),
             'attributes' => null,
             'set_id' => Set::all()->random()->id,
         ];

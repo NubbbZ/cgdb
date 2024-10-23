@@ -14,7 +14,6 @@ class Card extends Model
         'slug',
         'image',
         'reference',
-        'illustrator',
         'attributes',
         'set_id'
     ];

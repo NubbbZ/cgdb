@@ -16,9 +16,6 @@ class CardController extends Controller
         if ($request->query('set_id')) {
             $cards = Card::where('set_id', $request->get('set_id'))->get();
         }
-        elseif ($request->query('illustrator')) {
-            $cards = Card::where('illustrator', $request->get('illustrator'))->get();
-        }
         else $cards = Card::all();
 
         return CardResource::collection($cards);

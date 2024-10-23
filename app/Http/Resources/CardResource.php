@@ -20,7 +20,6 @@ class CardResource extends JsonResource
             'image' => $this->image,
             'set' => Set::find($this->set_id)->name,
             'reference' => $this->reference,
-            'illustrator' => $this->illustrator,
             //'attributes' => $this->attributes,
         ];
     }
