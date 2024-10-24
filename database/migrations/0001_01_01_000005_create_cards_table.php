@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('image')->nullable();
             $table->integer('reference')->nullable();
-            $table->json('attributes')->nullable();
+            $table->json('card_elements')->nullable();
             $table->foreignId('set_id')->constrained();
         });
     }

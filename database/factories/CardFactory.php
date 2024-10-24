@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\CardElement;
 use App\Models\Set;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -23,7 +24,11 @@ class CardFactory extends Factory
             'slug' => Str::slug($name),
             'image' => fake()->imageUrl(),
             'reference' => fake()->numberBetween(1, 128),
-            'attributes' => null,
+            'card_elements' => array(
+                'illustrator' => fake()->name(), 
+                'rarity' => fake()->name(), 
+                'health' => fake()->numberBetween(1, 128)
+            ),
             'set_id' => Set::all()->random()->id,
         ];
     }

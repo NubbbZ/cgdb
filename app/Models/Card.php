@@ -14,7 +14,10 @@ class Card extends Model
         'slug',
         'image',
         'reference',
-        'attributes',
+        'card_elements',
         'set_id'
+    ];
+    protected $casts = [
+        'card_elements' => 'array',
     ];
 }
