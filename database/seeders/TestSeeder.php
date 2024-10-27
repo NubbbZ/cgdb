@@ -2,12 +2,14 @@
 
 namespace Database\Seeders;
 
+use App\CardElementType;
 use App\Models\Card;
 use App\Models\Product;
 use App\Models\ProductType;
 use App\Models\Set;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class TestSeeder extends Seeder
 {
@@ -16,6 +18,22 @@ class TestSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::table('card_elements')->insert([
+            'name' => 'Illustrator',
+            'slug' => 'illustrator',
+            'type' => CardElementType::text,
+        ]);
+        DB::table('card_elements')->insert([
+            'name' => 'Rarity',
+            'slug' => 'rarity',
+            'type' => CardElementType::text,
+        ]);
+        DB::table('card_elements')->insert([
+            'name' => 'Health',
+            'slug' => 'health',
+            'type' => CardElementType::number,
+        ]);
+
         Set::factory(3)->create();
 
         ProductType::factory()->create([
