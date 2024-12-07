@@ -16,4 +16,9 @@ class Set extends Model
         'logo',
         'release_date',
     ];
+
+    public function cards()
+    {
+        return $this->hasMany(Card::class);
+    }
 }

@@ -20,4 +20,9 @@ class Card extends Model
     protected $casts = [
         'card_elements' => 'array',
     ];
+
+    public function set()
+    {
+        return $this->belongsTo(Set::class);
+    }
 }
