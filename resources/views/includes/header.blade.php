@@ -20,13 +20,13 @@
                 <li><a>Item 3</a></li>
             </ul>
         </div>
-        <a class="btn btn-ghost text-xl">{{ config('app.name') }}</a>
+        <a class="btn btn-ghost text-xl" href="/">{{ config('app.name') }}</a>
     </div>
     <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
-            <li><a>Products</a></li>
-            <li><a>Sets</a></li>
-            <li><a>Cards</a></li>
+            <li><a href="{{ route('products') }}">Products</a></li>
+            <li><a href="{{ route('sets') }}">Sets</a></li>
+            <li><a href="{{ route('cards') }}">Cards</a></li>
             <li><a>Docs</a></li>
         </ul>
     </div>
