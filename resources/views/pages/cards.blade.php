@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-<h1>Cards</h1>
+<div class="container mx-auto">
+    <livewire:card-table/>
+</div>
 @endsection

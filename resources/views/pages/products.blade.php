@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
 @section('content')
-<h1>Products</h1>
+<div class="container mx-auto">
+    <livewire:product-table/>
+</div>
 @endsection
