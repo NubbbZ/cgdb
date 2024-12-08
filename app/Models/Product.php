@@ -17,4 +17,9 @@ class Product extends Model
         'product_type_id',
         'set_id',
     ];
+
+    public function set()
+    {
+        return $this->belongsTo(Set::class);
+    }
 }
