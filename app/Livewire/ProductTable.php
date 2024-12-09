@@ -4,17 +4,20 @@ namespace App\Livewire;
 
 use App\Models\Product;
 use App\Models\ProductType;
+use App\Models\Set;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use PowerComponents\LivewirePowerGrid\Column;
+use PowerComponents\LivewirePowerGrid\Facades\Filter;
 use PowerComponents\LivewirePowerGrid\Facades\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridFields;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 
 final class ProductTable extends PowerGridComponent
 {
+    public bool $showFilters = true;
     public string $tableName = 'product-table-0ite96-table';
-
+    
     public function setUp(): array
     {
         return [
@@ -67,6 +70,21 @@ final class ProductTable extends PowerGridComponent
             Column::make('Set', 'set_id')
                 ->sortable()
                 ->searchable(),
+        ];
+    }
+
+    public function filters(): array
+    {
+        return [
+            Filter::select('product_type_id', 'product_type_id')
+                ->dataSource(ProductType::all())
+                ->optionLabel('name')
+                ->optionValue('id'),
+
+            Filter::select('set_id', 'set_id')
+                ->dataSource(Set::all())
+                ->optionLabel('name')
+                ->optionValue('id'),
         ];
     }
 }

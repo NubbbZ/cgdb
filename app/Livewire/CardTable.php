@@ -3,14 +3,17 @@
 namespace App\Livewire;
 
 use App\Models\Card;
+use App\Models\Set;
 use Illuminate\Database\Eloquent\Builder;
 use PowerComponents\LivewirePowerGrid\Column;
+use PowerComponents\LivewirePowerGrid\Facades\Filter;
 use PowerComponents\LivewirePowerGrid\Facades\PowerGrid;
 use PowerComponents\LivewirePowerGrid\PowerGridFields;
 use PowerComponents\LivewirePowerGrid\PowerGridComponent;
 
 final class CardTable extends PowerGridComponent
 {
+    public bool $showFilters = true;
     public string $tableName = 'card-table-ik4lfi-table';
 
     public function setUp(): array
@@ -62,6 +65,16 @@ final class CardTable extends PowerGridComponent
             Column::make('Set', 'set_id')
                 ->sortable()
                 ->searchable(),
+        ];
+    }
+
+    public function filters(): array
+    {
+        return [
+            Filter::select('set_id', 'set_id')
+                ->dataSource(Set::all())
+                ->optionLabel('name')
+                ->optionValue('id'),
         ];
     }
 }
