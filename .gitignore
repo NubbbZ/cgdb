@@ -20,3 +20,6 @@ yarn-error.log
 /.idea
 /.vscode
 /.zed
+/.scribe
+/public/vendor/scribe
+/resources/views/scribe

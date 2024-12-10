@@ -27,7 +27,7 @@
             <li><a href="{{ route('products') }}">Products</a></li>
             <li><a href="{{ route('sets') }}">Sets</a></li>
             <li><a href="{{ route('cards') }}">Cards</a></li>
-            <li><a>Docs</a></li>
+            <li><a href="{{ route('scribe') }}">Docs</a></li>
         </ul>
     </div>
     <div class="navbar-end">
