@@ -14,6 +14,17 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Card Game Name
+    |--------------------------------------------------------------------------
+    |
+    | This value is the name of the card game which this application is dedicated to.
+    |
+    */
+
+    'card_game_name' => env('APP_CARD_GAME_NAME', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
