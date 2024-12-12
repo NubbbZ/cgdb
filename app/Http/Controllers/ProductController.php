@@ -8,10 +8,19 @@ use App\Models\ProductType;
 use App\Models\Set;
 use Illuminate\Http\Request;
 
+/**
+ * @group Products
+ *
+ * APIs for products 
+ */
 class ProductController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get all products
+     * 
+     * Retrieve all products from the database.
+     * 
+     * If you include the `type` or `set` query parameter, it will return all products linked to the provided `type` or `set` query parameter.
      */
     public function index(Request $request)
     {
@@ -29,7 +38,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get the specified product
      */
     public function show(Product $product)
     {

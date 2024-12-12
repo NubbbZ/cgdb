@@ -8,7 +8,9 @@ use App\Models\ProductType;
 class ProductTypeController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get all product types
+     * 
+     * @group Products
      */
     public function index()
     {

@@ -6,10 +6,20 @@ use App\Http\Resources\CardResource;
 use App\Models\Card;
 use Illuminate\Http\Request;
 
+
+/**
+ * @group Cards
+ *
+ * APIs for cards 
+ */
 class CardController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Get all cards
+     * 
+     * Retrieve all cards from the database.
+     * 
+     * If you include the `set_id` query parameter, it will return all cards linked to the provided `set_id` query parameter.
      */
     public function index(Request $request)
     {
@@ -22,7 +32,7 @@ class CardController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Get the specified card
      */
     public function show(Card $card)
     {
